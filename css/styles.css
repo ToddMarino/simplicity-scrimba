@@ -37,6 +37,13 @@ img {
   display: block;
 }
 
+.image-full {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  margin-bottom: 3em;
+}
+
 /* =================
 Typography
 ================= */
@@ -64,6 +71,7 @@ h3 {
 }
 
 p {
+  color: var(--neutral-grey-4);
   font-size: var(--fs-2);
   line-height: 1.5;
 }
@@ -129,10 +137,14 @@ strong {
   text-decoration: underline;
 }
 
+.widget-title,
+.widget-recent-post-title {
+  font-size: var(--fs-3);
+}
+
 .widget-title {
   font-family: var(--ff-sans);
   color: var(--color-primary);
-  font-size: var(--fs-3);
   text-transform: uppercase;
   font-weight: var(--fw-700);
   letter-spacing: 1.6px;
@@ -140,7 +152,6 @@ strong {
 
 .widget-recent-post-title {
   color: var(--color-primary);
-  font-size: var(--fs-3);
 }
 
 .widget-body {
@@ -171,6 +182,10 @@ header {
   margin-bottom: 3em;
 }
 
+aside {
+  margin-left: 1em;
+}
+
 @media (min-width: 675px) {
   .container-flex {
     flex-direction: row;
@@ -182,6 +197,13 @@ header {
 
   aside {
     width: 25%;
+    min-width: 250px;
+  }
+}
+
+@media (max-width: 675px) {
+  aside {
+    margin-left: 0;
   }
 }
 /* navigation */
@@ -210,7 +232,7 @@ nav a:focus {
 }
 
 .current-page {
-  border-bottom: 1px solid var(--neutral-grey-4);
+  border-bottom: 3px solid var(--neutral-grey-4);
 }
 
 .current-page:hover {
@@ -290,13 +312,20 @@ nav a:focus {
 
 .sidebar-widget {
   border: 20px solid var(--neutral-grey-2);
-  padding: 20px 20px;
-  margin-bottom: 3em;
+  padding: 1em;
+  margin-bottom: 2em;
 }
 
 .widget-recent-post {
   display: flex;
   flex-direction: column;
+  border-bottom: 1px solid var(--neutral-grey-4);
+  margin-bottom: 1em;
+}
+
+.widget-recent-post:last-child {
+  border: 0;
+  margin: 0;
 }
 
 .widget-image {
@@ -306,18 +335,46 @@ nav a:focus {
   order: -2;
 }
 
-
 .widget-title {
-  padding-bottom: 1.125em;
   order: -1;
 }
 
 .widget-recent-post-title {
-  padding-bottom: 1.125em;
   padding-top: 0.875em;
   margin-bottom: 1.75em;
 }
 
 .op-center {
   object-position: 0% 82%;
+}
+
+/* footer */
+footer {
+  color: var(--neutral-grey-1);
+  text-align: center;
+  background-color: var(--color-primary);
+  margin-inline: 0;
+  padding: 1em 0;
+}
+
+.footer-text {
+  font-weight: var(--fw-400);
+  margin: 0;
+}
+
+.footer-info {
+  font-size: var(--fs-1);
+  font-weight: var(--fw-300);
+  margin: 0;
+  padding-top: 0.25em;
+}
+
+/* about me */
+.about-title {
+  font-size: var(--fs-4);
+  color: var(--color-primary);
+}
+
+.about-subtitle {
+  color: var(--color-secondary);
 }
